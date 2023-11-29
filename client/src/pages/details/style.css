@@ -1,0 +1,57 @@
+
+
+
+
+.detailContainer{
+    /* height:350px;
+    width:400px; */
+    /* height:420px; */
+    height: fit-content;
+    width:770px;
+    background-color: rgba(0, 255, 183, 0.678);
+    margin-top: 60px;
+    padding: 30px;
+    border: 14px solid rgb(35, 200, 131);
+}
+
+.outer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.titleContainer{
+    color: red;
+    font-size: 32px;
+}
+
+.descriptionContainer{
+    color: green;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.btnsContainer{
+    
+}
+
+.btnnn{
+    background-color: red;
+    padding: 8px;
+    color: #FFF;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn:hover{
+    background-color: blue;
+    color: #FFF;
+}
+
+.btnAndDate{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+}
