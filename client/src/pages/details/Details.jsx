@@ -35,11 +35,11 @@ const Details = () => {
      dispatch(getNotesById({id}))
    },[params.id])
 
-   useEffect(()=>{
-    if(updatedNoteData.status==='success'){
-      navigate('/notes')
-    }
-  },[updatedNoteData.status,navigate])
+  //  useEffect(()=>{
+  //   if(updatedNoteData.status==='success'){
+  //     navigate('/notes')
+  //   }
+  // },[updatedNoteData.status,navigate])
 
    const handleClick=(e)=>{
       dispatch(deleteNote(id))
@@ -49,6 +49,7 @@ const Details = () => {
    const handleUpdate=()=>{
     dispatch(updateNote({id,title,description}))
      setUpdateMode(!updateMode)
+     navigate('/notes')
    }
 
    console.log(updateMode)

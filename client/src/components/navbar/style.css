@@ -90,3 +90,18 @@ nav .menu span {
       margin: 0.2rem 0.5rem;
   }
 }
+
+.logoutBtn{
+  border: none;
+  background-color: #0f172a;
+  color: #FFF;
+  margin-top: 8px;
+}
+
+.logoutBtn:hover{
+  background-color: #FFF;
+  color:red;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 1px;
+}

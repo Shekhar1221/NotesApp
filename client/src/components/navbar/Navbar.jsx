@@ -1,10 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./style.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { logout } from "../../store/userSlice";
+import { useDispatch } from "react-redux";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoutt,setLogoutt]=useState(false)
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
+
+  const handleClick=(e)=>{
+    setLogoutt(true)
+    dispatch(logout())
+    navigate('/')
+  }
+
+  // useEffect(()=>{
+  //     if(logout){
+  //        navigate('/')
+  //     }
+  // },[logout])
+
+  // console.log(logout)
 
   return (
     <nav>
@@ -24,7 +43,7 @@ export const Navbar = () => {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/logout">Logout</NavLink>
+          <button className="logoutBtn" onClick={handleClick}>Logout</button>
         </li>
       </ul>
     </nav>

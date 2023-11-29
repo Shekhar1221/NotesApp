@@ -5,9 +5,14 @@ import Reset from './pages/reset/Reset';
 import Notes from './pages/notes/Notes';
 import Details from './pages/details/Details';
 import Create from './pages/create/Create';
-
+import Cookies from 'js-cookie'
+import { useEffect, useState } from 'react';
 
 function App() {
+
+   
+  
+
   return (
      <BrowserRouter>
       <Routes>

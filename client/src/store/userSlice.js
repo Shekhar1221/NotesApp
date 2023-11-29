@@ -19,6 +19,11 @@ export const loginUser=createAsyncThunk('/login',async({email,password})=>{
     return response.data
 })
 
+export const logout=createAsyncThunk('/logout',async()=>{  
+  const response=await axios.post('/api/users/logout')
+  return response.data
+})
+
 export const userSlice=createSlice({
     name: "user",
   initialState: {
@@ -69,6 +74,21 @@ builder.addCase(loginUser.rejected, (state, action) => {
   state.isFetching = false
   state.isError=true
   state.isSuccess=false
+})
+builder.addCase(logout.pending, (state, action) => {
+  state.isFetching =true
+  state.isError=false
+  state.isSuccess=false
+})
+builder.addCase(logout.fulfilled, (state, action) => {
+state.isFetching = false
+state.isError=false
+state.isSuccess=true
+})
+builder.addCase(logout.rejected, (state, action) => {
+state.isFetching = false
+state.isError=true
+state.isSuccess=false
 })
   },
 })
