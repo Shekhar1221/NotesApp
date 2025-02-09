@@ -1,0 +1,19 @@
+pipeline{
+    stages{
+        stage('source'){
+            steps{
+               git branch: 'main', url: 'https://github.com/Shekhar1221/NotesApp.git'
+            }
+        }
+        stage('build'){
+            steps{
+                sh 'cd client && npm i && npm run build'
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh 'cp -r ./client/build/* /var/www/html'
+            }
+        }
+    }
+}
